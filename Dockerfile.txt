@@ -1,28 +1,30 @@
-#############
-#
-#zenthor_ai_crypto
-#
-#############
+# ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗ 
+# ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝ 
+# ╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝╩╚═ 
+# ╔═╗╦  ┌─┐┬─┐┬┌─┐┌┬┐┌─┐
+# ╠═╣║  │  ├┬┘│├─┘ │ │ │
+# ╩ ╩╩  └─┘┴└─┴┴   ┴ └─┘
 
 # Python 3.13 alap image
 FROM python:3.13-slim
 
-# ĂllĂ­tsd be a munkakĂ¶nyvtĂˇrat
+# Állítsd be a munkakönyvtárat
 WORKDIR /app
-COPY main.py .
-CMD ["python", "main.py"]
 
-
-# MĂˇsold Ăˇt a requirements.txt fĂˇjlt (ha mĂ©g nem lĂ©tezik, hozz lĂ©tre egyet)
+# Másold át a requirements.txt fájlt (ha még nem létezik, hozz létre egyet)
+# Másolj csak a requirements fájlt, hogy ha csak a kód változik,
+# a függőségek telepítését ne kelljen újra végrehajtani
 COPY requirements.txt .
 
-# TelepĂ­tsd a fĂĽggĹ‘sĂ©geket
+
+# Telepítsd a függőségeket – ez a lépés cache-elhető lesz, ha 
+# a requirements.txt nem változik
 RUN pip install --no-cache-dir -r requirements.txt
 
-# MĂˇsold Ăˇt a teljes projektet a kontĂ©nerbe
+
+# Másold át a teljes projektet a konténerbe
 COPY . .
 
-# AlkalmazĂˇs indĂ­tĂˇsa â€“ a main.py futtatĂˇsa
-# AlkalmazĂˇs indĂ­tĂˇsa â€“ itt feltĂ©telezzĂĽk, hogy lesz egy main.py, ami Ă¶sszekapcsolja a modulokat.
+# Alkalmazás indítása – a main.py futtatása
+# Alkalmazás indítása – itt feltételezzük, hogy lesz egy main.py, ami összekapcsolja a modulokat.
 CMD ["python", "main.py"]
-
