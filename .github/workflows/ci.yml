@@ -9,28 +9,44 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.13-slim
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.13
+      - name: Set up Python 3.13 #Beállítja a Python környezetet
         uses: actions/setup-python@v2
         with:
           python-version: 3.13
 
 
-      - name: Install dependencies
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install -r requirements.txt
+#      - name: Install dependencies #Függőségek telepítése
+#        run: |
+#          python -m venv venv
+#          source venv/bin/activate
+#          pip install -r requirements.txt
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Függőségek telepítése
+        run: pip install --no-cache-dir -r requirements.txt
+        timeout-minutes: 5
+
+
 
       - name: Run tests
         run: |
-          source venv/bin/activate
+          # source venv/bin/activate
           # Futtasd a teszteket, ha készítesz például unittest-eket
           python -m unittest discover
 
-      - name: Build Docker image
+      - name: Build Docker image #Buildelés
         run: docker build -t zenthor-ai-cripto .
