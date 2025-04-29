@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: zenthor-ai-cripto
 spec:
-  replicas: 2  # teszteléshez javasolt 2 példány indítása
+  replicas: 2  # Teszteléshez javasolt 2 példány indítása
   selector:
     matchLabels:
       app: zenthor-ai-cripto
@@ -15,6 +15,7 @@ spec:
       containers:
       - name: zenthor-ai-cripto
         image: zenthor-ai-cripto:latest
+        command: ["python", "main.py"]  # Az alkalmazás indításához
         ports:
         - containerPort: 80
         resources:
