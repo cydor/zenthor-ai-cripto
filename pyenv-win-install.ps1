@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #
 # Usage: curl https://pyenv.run | bash
 #

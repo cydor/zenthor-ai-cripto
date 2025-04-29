@@ -1,4 +1,4 @@
-ccxt
+﻿ccxt
 pandas
 requests
 streamlit

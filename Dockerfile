@@ -1,0 +1,25 @@
+﻿###################
+#                                 #
+# zenthor_ai_crypto    #
+#                                 #
+###################
+
+# Python 3.13 alap image
+FROM python:3.13-slim
+
+# Állítsd be a munkakönyvtárat
+WORKDIR /app
+
+# Másold át a requirements.txt fájlt (ha még nem létezik, hozz létre egyet)
+COPY requirements.txt .
+COPY main.py .
+
+# Telepítsd a függőségeket
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Másold át a teljes projektet a konténerbe
+COPY . .
+
+# Alkalmazás indítása – a main.py futtatása
+# Alkalmazás indítása – itt feltételezzük, hogy lesz egy main.py, ami összekapcsolja a modulokat.
+CMD ["python", "main.py"]
