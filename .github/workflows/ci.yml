@@ -9,18 +9,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Az alábbi container blokk azt jelenti, hogy a CI pipeline
+    # a python:3.13-slim image-ben fog futni, amely kis erőforrásigényű.
+    # Az --privileged és a docker socket csatolása kritikus ahhoz, 
+    # hogy a containerből is elérhető legyen a Docker daemon, 
+    # így a docker build parancs sikeren lefusson.
     container:
       image: python:3.13-slim
+      options: --privileged -v /var/run/docker.sock:/var/run/docker.sock
 
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.13 #Beállítja a Python környezetet
+      - name: Set up Python 3.13 # Beállítja a Python környezetet
         uses: actions/setup-python@v2
         with:
           python-version: 3.13
-
 
       - name: Cache pip dependencies
         uses: actions/cache@v2
@@ -36,9 +41,12 @@ jobs:
 
       - name: Run tests
         run: |
-
           # Futtasd a teszteket, ha készítesz például unittest-eket
           python -m unittest discover
 
-      - name: Build Docker image #Buildelés
+      - name: Install Docker CLI 
+        run: |
+          apt-get update && apt-get install -y docker.io
+
+      - name: Build Docker image # Buildelés
         run: docker build -t zenthor-ai-cripto .
