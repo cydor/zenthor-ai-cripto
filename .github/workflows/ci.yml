@@ -22,12 +22,6 @@ jobs:
           python-version: 3.13
 
 
-#      - name: Install dependencies #Függőségek telepítése
-#        run: |
-#          python -m venv venv
-#          source venv/bin/activate
-#          pip install -r requirements.txt
-
       - name: Cache pip dependencies
         uses: actions/cache@v2
         with:
@@ -40,11 +34,9 @@ jobs:
         run: pip install --no-cache-dir -r requirements.txt
         timeout-minutes: 5
 
-
-
       - name: Run tests
         run: |
-          # source venv/bin/activate
+
           # Futtasd a teszteket, ha készítesz például unittest-eket
           python -m unittest discover
 
