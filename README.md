@@ -1,0 +1,27 @@
+
+Zenthor AI-Crypto 2025
+📌 Mit csinál a projekt? A Zenthor AI-Crypto egy automatizált, mesterséges intelligenciát használó kriptokereskedési rendszer, amely valós idejű piaci adatokat elemez, előrejelzéseket készít és döntéseket hoz. Az alkalmazás célja, hogy a fejlesztés során tanulási és kutatási céllal induljon, majd idővel egy teljes funkcionalitású, termelőeszközzé váljon, amely képes hatékony piaci stratégiákat alkalmazni.
+
+🔧 Technológiai alapok A fejlesztés során az alábbi technológiákra építünk:
+
+Python 3.13 – A projekt fejlesztése során ezt a stabil verziót tartjuk szem előtt.
+
+Kubernetes – A teljes rendszer skálázhatóságát biztosítja.
+
+Docker – Konténerizált megoldás a fejlesztési és éles környezethez.
+
+GitHub Actions (CI/CD) – Automatizált build, tesztelés és deploy folyamatok.
+
+🌍 Nyílt forráskódú fejlesztés és közösségi hozzájárulás A projekt MIT License alatt áll, ami azt jelenti, hogy bárki szabadon fejlesztheti, módosíthatja és felhasználhatja, de nem sajátíthatja ki. Bármilyen közösségi hozzájárulás (pull request, issue) nyitott és támogatott.
+
+📚 Források és hivatkozások Bár a projekt független fejlesztés, az alábbi ingyenesen elérhető forrásokat használjuk, és ezeket hivatalosan is elismerjük:
+
+CCXT könyvtár – Kriptotőzsdei API-k kezelése.
+
+Pandas és NumPy – Adatelemzés és matematikai számítások.
+
+Microsoft Copilot, Github Copilot – A fejlesztés támogatására mesterséges intelligencia segítségével.
+
+👨‍💻 Fejlesztés és közreműködés A projekt fejlesztése a Microsoft Copilot támogatásával zajlik, amely segíti a kódstruktúra optimalizálását és a stratégiai döntéshozatalt. A fejlesztők és érdeklődők számára a dokumentáció nyilvánosan elérhető.
+
+📌 Célok a fejlesztés során: ✅ Python 3.13 környezet fenntartása és optimalizálása ✅ Kódstruktúra és kereskedési algoritmus fejlesztése ✅ Kubernetes alapon skálázható architektúra kialakítása ✅ Gépi tanulás és prediktív modellek integrálása

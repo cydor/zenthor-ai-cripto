@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zenthor-ai-cripto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zenthor-ai-cripto
+  template:
+    metadata:
+      labels:
+        app: zenthor-ai-cripto
+    spec:
+      containers:
+      - name: zenthor-ai-cripto
+        image: zenthor-ai-cripto:latest
+        ports:
+        - containerPort: 80
