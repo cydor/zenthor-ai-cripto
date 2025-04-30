@@ -1,3 +1,21 @@
+# .dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.git
+.idea/
+.vscode/
+node_modules/
 
-config.*.json
-!config.dev.json  # Csak a dev build során használtat engedjük be
+
+# Ignore all config files
+config/*.json
+
+# ...kivéve az aktívan használtat (ha dev a default)
+config/*.json
+!config/dev.json
+!config/test.json
+!config/prod.json
+

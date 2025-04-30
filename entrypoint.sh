@@ -1,6 +1,6 @@
 #entrypoint.sh
 #!/bin/sh
-echo ">> Running in $ENV environment"
+echo ">> Running in $ENV environment" "🚀 ENTRYPOINT: környezet: $ENV"
 
 # Például: ha dev környezet, akkor verbose log, külön config, stb.
 if [ "$ENV" = "dev" ]; then
