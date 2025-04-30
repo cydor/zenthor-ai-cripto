@@ -1,34 +1,67 @@
-﻿https://opensource.org/license/MIT
+﻿MIT License
+
 Version 0.1
 
 The MIT License (MIT)
 
 Copyright 2025 Cydor (GitHub: cydor) zenthor.hu
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the â€śSoftwareâ€ť), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-(DEU)
+
 MIT-Lizenz (MIT)
 
 Copyright 2025 Cydor (GitHub: cydor) zenthor.hu
 
-Hiermit wird jeder Person, die eine Kopie dieser Software und der zugehĂ¶rigen Dokumentationsdateien (die "Software") erhĂ¤lt, kostenlos die Erlaubnis erteilt, mit der Software uneingeschrĂ¤nkt zu verfahren, einschlieĂźlich und ohne EinschrĂ¤nkung der Rechte zur Nutzung, VervielfĂ¤ltigung, Ă„nderung, ZusammenfĂĽhrung, VerĂ¶ffentlichung, Weitergabe, Unterlizenzierung und/oder Verkauf von Kopien der Software sowie der Erlaubnis fĂĽr Personen, denen die Software zur VerfĂĽgung gestellt wird, dies unter den folgenden Bedingungen zu tun:
+Hiermit wird jeder Person, die eine Kopie dieser Software und der zugehörigen
+Dokumentationsdateien (die "Software") erhält, kostenlos die Erlaubnis erteilt,
+mit der Software uneingeschränkt zu verfahren, einschließlich und ohne Einschränkung
+der Rechte zur Nutzung, Vervielfältigung, Änderung, Zusammenführung, Veröffentlichung,
+Verbreitung, Unterlizenzierung und/oder zum Verkauf von Kopien der Software sowie der
+Erlaubnis für Personen, denen die Software zur Verfügung gestellt wird, dies unter
+den folgenden Bedingungen zu tun:
 
-Der obige Urheberrechtshinweis und dieser Genehmigungshinweis mĂĽssen in allen Kopien oder wesentlichen Teilen der Software enthalten sein.
+Der obige Urheberrechtshinweis und dieser Genehmigungshinweis müssen in allen Kopien
+oder wesentlichen Teilen der Software enthalten sein.
 
-DIE SOFTWARE WIRD "WIE BESEHEN" BEREITGESTELLT, OHNE JEGLICHE GEWĂ„HRLEISTUNG, AUSDRĂśCKLICH ODER STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRĂ„NKT AUF DIE GEWĂ„HRLEISTUNG DER MARKTGĂ„NGIGKEIT, DER EIGNUNG FĂśR EINEN BESTIMMTEN ZWECK UND DER NICHTVERLETZUNG. IN KEINEM FALL SIND DIE AUTOREN ODER URHEBERRECHTSINHABER HAFTBAR FĂśR JEGLICHE ANSPRĂśCHE, SCHĂ„DEN ODER SONSTIGE HAFTUNG, SEI ES AUS VERTRAG, UNERLAUBTER HANDLUNG ODER ANDERWEITIG, DIE AUS DER SOFTWARE ODER DER NUTZUNG DER SOFTWARE ENTSTEHEN.
+DIE SOFTWARE WIRD "WIE BESEHEN" BEREITGESTELLT, OHNE JEGLICHE GEWÄHRLEISTUNG, AUSDRÜCKLICH
+ODER STILLSCHWEIGEND, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF DIE GEWÄHRLEISTUNG DER
+MARKTGÄNGIGKEIT, DER EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND DER NICHTVERLETZUNG. IN KEINEM FALL
+SIND DIE AUTOREN ODER URHEBERRECHTSINHABER HAFTBAR FÜR JEGLICHE ANSPRÜCHE, SCHÄDEN ODER SONSTIGE
+HAFTUNG, SEI ES AUS VERTRAG, UNERLAUBTER HANDLUNG ODER ANDERWEITIG, DIE AUS DER SOFTWARE ODER
+DER NUTZUNG DER SOFTWARE ENTSTEHEN.
 
-(HUN)
+
 MIT Licenc
 
-SzerzĹ‘i jog 2025 Cydor (GitHub: cydor) zenthor.hu
+Szerzői jog © 2025 Cydor (GitHub: cydor) zenthor.hu
 
-A jelen szerzĹ‘dĂ©s Ă©rtelmĂ©ben ingyenesen engedĂ©lyt kap bĂˇrmely szemĂ©ly, aki megszerzi a jelen szoftvert Ă©s a kapcsolĂłdĂł dokumentĂˇciĂłs fĂˇjlokat (â€žSzoftverâ€ť), arra, hogy korlĂˇtozĂˇs nĂ©lkĂĽl hasznĂˇlja a Szoftvert, beleĂ©rtve korlĂˇtozĂˇs nĂ©lkĂĽl a jogokat: hasznĂˇlat, mĂˇsolĂˇs, mĂłdosĂ­tĂˇs, Ă¶sszevonĂˇs, kĂ¶zzĂ©tĂ©tel, terjesztĂ©s, allicencelĂ©s Ă©s/vagy a szoftver pĂ©ldĂˇnyainak Ă©rtĂ©kesĂ­tĂ©se, valamint azoknak a szemĂ©lyeknek, akiknek a Szoftvert rendelkezĂ©sre bocsĂˇtjĂˇk, a kĂ¶vetkezĹ‘ feltĂ©telek mellett:
+Jelen dokumentum alapján minden olyan személy, aki megszerzi ezt a 
+szoftvert és a hozzá tartozó dokumentációs fájlokat (a továbbiakban: "Szoftver"), 
+ingyenesen engedélyt kap arra, hogy a Szoftvert a következő feltételek mellett 
+korlátozás nélkül használja, másolja, módosítsa, összevonja, közzétételje, 
+terjessze, allicencelje, illetve értékesítse a Szoftver példányait, valamint 
+engedélyezze azoknak a személyeknek, akiknek a Szoftvert rendelkezésre bocsátja, ezt:
+  
+A fenti szerzői jogi nyilatkozatot és ezen engedély nyilatkozatot minden Szoftver 
+másolatban vagy annak lényeges részében fel kell tüntetni.
 
-A fenti szerzĹ‘i jogi nyilatkozatnak Ă©s ennek az engedĂ©lynek minden mĂˇsolaton vagy lĂ©nyeges rĂ©szĂ©n szerepelnie kell.
-
-A SZOFVER â€žAHOGY VANâ€ť ALAPON KERĂśL BIZTOSĂŤTĂSRA, GARANCIA NĂ‰LKĂśL, AKĂR KIFEJEZETT, AKĂR IMPLIKĂLT FORMĂBAN, BELEĂ‰RTVE, DE NEM KIZĂRĂ“LAGOSAN A KERESKEDELMI FORGALOMBA HOZHATĂ“SĂGI GARANCIĂT, A MEGHATĂROZOTT CĂ‰LRA VALĂ“ ALKALMASSĂGOT Ă‰S A JOGSĂ‰RTĂ‰S ELKERĂśLĂ‰SĂ‰T. SEMMI ESETRE SEM VONHATĂ“K FELELĹSSĂ‰GRE A SZERZĹK VAGY A SZERZĹI JOG TULAJDONOSAI SEMMILYEN IGĂ‰NYĂ‰RT, KĂRĂ‰RT VAGY MĂS JOGI FELELĹSSĂ‰GĂ‰RT, AKĂR SZERZĹDĂ‰SES, AKĂR TĂ–RVĂ‰NYTELEN CSELEKMĂ‰NYBĹL SZĂRMAZIK, AMELY A SZOFTVER HASZNĂLATĂBĂ“L VAGY MĂS KAPCSOLĂ“DĂ“ ĂśGYLETEKBĹL ERED.
+A SZOFVER "AHOGY VAN" ALAPON KERÜL SZOLGÁLTATÁSRA, GARANCIA NÉLKÜL, KIFEJEZETT ÉS 
+IMPLIKÁLT GARANCIA NÉLKÜL. SEMMI KÉNT SEM AZ AUTOROK VAGY A SZERZŐI JOG TULAJDONOSAI 
+NEM VÁLLALNA FELELŐSSÉGET SEMMILYEN, A SZOFVER HASZNÁLATÁBÓL, VAGY AZ ABBA TARTOZÓ 
+JEGYZETEK, SZERZŐDÉS, TORT VAGY EGYÉB JOGI ALAPÚ IGÉNY ÉRTELMÉBEN.
