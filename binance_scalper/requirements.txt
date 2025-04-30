@@ -1,0 +1,4 @@
+#requirements.txt
+
+python-binance
+python-dotenv

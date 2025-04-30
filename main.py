@@ -1,16 +1,45 @@
+# ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗ 
+# ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝ 
+# ╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝╩╚═ 
+# ╔═╗╦  ┌─┐┬─┐┬┌─┐┌┬┐┌─┐
+# ╠═╣║  │  ├┬┘│├─┘ │ │ │
+# ╩ ╩╩  └─┘┴└─┴┴   ┴ └─┘
+# ┌┬┐┌─┐┬┌┐┌ ┌─┐┬ ┬     
+# │││├─┤││││ ├─┘└┬┘     
+# ┴ ┴┴ ┴┴┘└┘o┴   ┴  
+
+# main.py
+# main.py – Egyszerű HTTP healthcheck a konténerhez
+
 import signal
 import time
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+from core.config_loader import load_config
 
-print("Zenthor AI-Crypto is running!")
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/':
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"Zenthor AI-Crypto online.")
+
+def start_http_server():
+    server = HTTPServer(('', 8080), HealthCheckHandler)
+    thread = threading.Thread(target=server.serve_forever)
+    thread.daemon = True
+    thread.start()
+    print("✅ HealthCheck szerver elindult a 8080-as porton")
 
 def shutdown_handler(signum, frame):
-    print("Leállítási jel érkezett. Kilépés...")
+    print("🛑 Leállítási jel érkezett. Kilépés...")
     exit(0)
 
-# Kapcsolódás a SIGTERM és SIGINT jelekhez (Docker stop és Ctrl+C)
-signal.signal(signal.SIGTERM, shutdown_handler)
-signal.signal(signal.SIGINT, shutdown_handler)
+if __name__ == "__main__":
+    config = load_config()
+    start_http_server()
+    signal.signal(signal.SIGTERM, shutdown_handler)
+    signal.signal(signal.SIGINT, shutdown_handler)
 
-# Végtelen várakozás, de szabályos leállítási lehetőséggel
-while True:
-    time.sleep(60)
+    while True:
+        time.sleep(60)

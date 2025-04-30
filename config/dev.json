@@ -1,0 +1,8 @@
+#config.dev.json
+{
+  "env": "dev",
+  "api_mode": "sandbox",
+  "log_level": "debug",
+  "binance_api_key": "DEMO_KEY",
+  "binance_api_secret": "DEMO_SECRET"
+}

@@ -1,0 +1,11 @@
+#.gitignore
+*.pyc
+__pycache__/
+.env
+settings.dat
+*.sqlite
+*.db
+*.log
+# API-kulcsos config fájlok
+config/*.json
+!config/dev.json

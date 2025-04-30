@@ -1,0 +1,3 @@
+
+config.*.json
+!config.dev.json  # Csak a dev build során használtat engedjük be
