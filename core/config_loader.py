@@ -31,3 +31,5 @@ def load_config():
 
     print(f"✅ Betöltött környezet: {env}")
     return config
+if os.path.getsize(config_path) == 0:
+    raise RuntimeError(f"⚠️ A konfigurációs fájl üres: {config_path}")

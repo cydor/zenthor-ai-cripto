@@ -27,18 +27,27 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+  
+
+    - name: 📦 JSON konfigurációs fájl ellenőrzése
+      run: |
+        echo "📂 Elérhető fájlok a config/ mappában:"
+        ls -l config/
+        echo "🧪 JSON tartalom (dev):"
+        cat config/dev.json
+        if [ ! -s config/dev.json ]; then
+          echo "❌ A config/dev.json üres!" && exit 1
+        fi
 
     - name: 🐳 Docker Build (dev környezet)
       run: |
         docker build --build-arg ENV=dev -t zenthor-ai-cripto .
 
-    # Opció: futtathatsz benne teszteket is (ha van pl. test_runner.py)
-    # - name: ✅ Tesztek futtatása
-    #   run: docker run zenthor-ai-cripto python -m unittest discover
+    - name: ✅ Tesztfutás: main.py futtatása konténeren belül
+      run: |
+        docker run --rm -e ENV=dev zenthor-ai-cripto python main.py
 
-    # DockerHub push: csak akkor, ha privát vagy éles image-et töltenél
-    # - name: 📤 Docker push (opcionális)
+    # Ezt később kiegészíthetjük más modul teszteléssel is:
+    # - name: ✅ Teszt: Adatlekérés
     #   run: |
-    #     echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-    #     docker tag zenthor-ai-cripto your-dockerhub-user/zenthor-ai-cripto:latest
-    #     docker push your-dockerhub-user/zenthor-ai-cripto:latest
+    #     docker run --rm -e ENV=dev zenthor-ai-cripto python data_collector.py
