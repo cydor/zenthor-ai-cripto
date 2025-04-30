@@ -25,6 +25,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Másold át a teljes projektet a konténerbe
 COPY . .
 
+EXPOSE 8080
+
 # Alkalmazás indítása – a main.py futtatása
 # Alkalmazás indítása – itt feltételezzük, hogy lesz egy main.py, ami összekapcsolja a modulokat.
 CMD ["python", "main.py"]

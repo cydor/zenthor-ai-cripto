@@ -1,0 +1,5 @@
+apiVersion: v2
+name: zenthor-ai-cripto
+description: AI-alapú kriptokereskedési rendszer
+version: 0.1.0
+appVersion: "0.1"
