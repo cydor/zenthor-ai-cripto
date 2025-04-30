@@ -1,8 +1,6 @@
-#entrypoint.sh
 #!/bin/sh
-echo ">> Running in $ENV environment" "🚀 ENTRYPOINT: környezet: $ENV"
+echo "🚀 ENTRYPOINT: környezet: $ENV"
 
-# Például: ha dev környezet, akkor verbose log, külön config, stb.
 if [ "$ENV" = "dev" ]; then
     echo ">> Dev mode: debug logging enabled"
     exec python main.py --debug
@@ -13,4 +11,3 @@ else
     echo ">> Unknown ENV=$ENV. Falling back to default run."
     exec python main.py
 fi
-exec "$@"  # --> ez futtatja a CMD-t (python main.py)

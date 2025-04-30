@@ -50,15 +50,15 @@ DOCKER_BUILDKIT=1 docker build -t zenthor-ai-cripto .
 💡 BuildKit gyorsabb, cache-barát és jobban kezeli párhuzamos pip install-t is.
 
 ## Docker PROD Build & RUN
-docker build --build-arg ENV=prod -t zenthor-ai-cripto .
-DOCKER_BUILDKIT=1 docker run -e ENV=prod -p 8080:8080 zenthor-ai-cripto .
+DOCKER_BUILDKIT=1 docker build --build-arg ENV=prod -t zenthor-ai-cripto .
+docker run -e ENV=prod -p 8080:8080 zenthor-ai-cripto .
 
 ## Docker DEV Build & RUN # Alapértelmezett (dev mód)
-docker build -t zenthor-ai-cripto .
-DOCKER_BUILDKIT=1 docker run -e ENV=dev -p 8080:8080 zenthor-ai-cripto
+DOCKER_BUILDKIT=1 docker build --build-arg ENV=dev -t zenthor-ai-cripto .
+ docker run -e ENV=dev -p 8080:8080 zenthor-ai-cripto
 
 
 ## Docker TEST Build & RUN
-docker build --build-arg ENV=test -t zenthor-ai-cripto .
-DOCKER_BUILDKIT=1 docker run -e ENV=test -p 8080:8080 zenthor-ai-cripto
+DOCKER_BUILDKIT=1 docker build --build-arg ENV=test -t zenthor-ai-cripto .
+ docker run -e ENV=test -p 8080:8080 zenthor-ai-cripto
 

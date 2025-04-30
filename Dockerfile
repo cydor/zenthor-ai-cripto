@@ -22,11 +22,14 @@ ENV ENV=$ENV
 
 # ▶  Külön csak requirements.txt – hogy pip install cache-elhető legyen
 # 🔽 Ha csak a kód változik, de a dependencies nem, a Docker cache miatt nem kell újra pip install-t futtatni
+COPY entrypoint.sh ./entrypoint.sh
 COPY requirements.txt .
-
+ENV PIP_CACHE_DIR=/root/.cache/pip #Ez cache-elni fogja a következő buildnél (ha nem változott semmi). Ha BuildKit is aktív, ez különösen jól jön.
 # ▶   Függőségek cache-elhető telepítése
 # 📦--no-cache-dir → kisebb image méret, nem menti le a cache-t
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN ls -lah . && echo "✅ Ellenőrzés: fájlok jelen vannak a build contextben"
 
 # ▶ Projektfájlok másolása
 # 📁 Teljes projekt másolása csak ezután (main.py, modulok, logo.txt stb.)

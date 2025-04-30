@@ -1,0 +1,44 @@
+#.github/workflows/docker-build.yml
+name: Docker CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🔄 Kód checkout
+      uses: actions/checkout@v4
+
+    - name: 🐍 Python környezet beállítása (ha kell pip cache-hez)
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: 🧠 Pip cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: 🐳 Docker Build (dev környezet)
+      run: |
+        docker build --build-arg ENV=dev -t zenthor-ai-cripto .
+
+    # Opció: futtathatsz benne teszteket is (ha van pl. test_runner.py)
+    # - name: ✅ Tesztek futtatása
+    #   run: docker run zenthor-ai-cripto python -m unittest discover
+
+    # DockerHub push: csak akkor, ha privát vagy éles image-et töltenél
+    # - name: 📤 Docker push (opcionális)
+    #   run: |
+    #     echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+    #     docker tag zenthor-ai-cripto your-dockerhub-user/zenthor-ai-cripto:latest
+    #     docker push your-dockerhub-user/zenthor-ai-cripto:latest
