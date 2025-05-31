@@ -28,10 +28,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Set up Python 3.13 # Beállítja a Python környezetet
+     # - name: Set up Python 3.13 # Beállítja a Python környezetet
+     - name: Set up Python 3.11 # Beállítja a Python környezetet
         uses: actions/setup-python@v2
         with:
-          python-version: 3.13
+         #python-version: 3.13
+          python-version: 3.11
 
       - name: Függőségek telepítése
         run: pip install --no-cache-dir -r requirements.txt
