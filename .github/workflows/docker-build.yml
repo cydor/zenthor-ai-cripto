@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔄 Kód checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🐍 Python környezet beállítása
+      - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: 🧠 Pip cache
+      - name: Cache pip dependencies
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
@@ -27,14 +27,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: 📦 JSON konfigurációs fájl ellenőrzése
-        run: bash ci/check_json.sh
-
-
-      - name: 🐳 Docker Build (dev környezet)
+      - name: JSON fájl ellenőrzés
         run: |
-          docker build --build-arg ENV=dev -t zenthor-ai-cripto .
+          chmod +x ci/check_json.sh
+          ./ci/check_json.sh
 
-      - name: ✅ Tesztfutás: main.py futtatása konténeren belül
-        run: |
-          docker run --rm -e ENV=dev zenthor-ai-cripto python main.py
+      - name: Build Docker image
+        run: docker build --build-arg ENV=dev -t zenthor-ai-cripto .
+
+      - name: Konténer futtatás teszt célból
+        run: docker run --rm -e ENV=dev -p 8080:8080 zenthor-ai-cripto
