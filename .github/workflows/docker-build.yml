@@ -28,12 +28,8 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: 📦 JSON konfigurációs fájl ellenőrzése
-        run: |
-          echo "📂 Elérhető fájlok a config/ mappában:"
-          ls -l config/
-          echo "🧪 JSON tartalom (dev):"
-          cat config/dev.json
-          bash -c 'if [ ! -s config/dev.json ]; then echo "❌ A config/dev.json üres!" && exit 1; fi'
+        run: bash ci/check_json.sh
+
 
       - name: 🐳 Docker Build (dev környezet)
         run: |
