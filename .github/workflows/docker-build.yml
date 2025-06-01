@@ -31,22 +31,22 @@ jobs:
   
 
     - name: 📦 JSON konfigurációs fájl ellenőrzése
-      run: |
-        echo "📂 Elérhető fájlok a config/ mappában:"
-        ls -l config/
-        echo "🧪 JSON tartalom (dev):"
-        cat config/dev.json
-        if [ ! -s config/dev.json ]; then
-          echo "❌ A config/dev.json üres!" && exit 1
-        fi
+        run: |
+            echo "📂 Elérhető fájlok a config/ mappában:"
+            ls -l config/
+            echo "🧪 JSON tartalom (dev):"
+            cat config/dev.json
+            if [ ! -s config/dev.json ]; then
+              echo "❌ A config/dev.json üres!" && exit 1
+            fi
 
     - name: 🐳 Docker Build (dev környezet)
-      run: |
-        docker build --build-arg ENV=dev -t zenthor-ai-cripto .
+        run: |
+            docker build --build-arg ENV=dev -t zenthor-ai-cripto .
 
     - name: ✅ Tesztfutás: main.py futtatása konténeren belül
-      run: |
-        docker run --rm -e ENV=dev zenthor-ai-cripto python main.py
+        run: |
+            docker run --rm -e ENV=dev zenthor-ai-cripto python main.py
 
     # Ezt később kiegészíthetjük más modul teszteléssel is:
     # - name: ✅ Teszt: Adatlekérés
