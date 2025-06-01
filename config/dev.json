@@ -1,4 +1,11 @@
 #config.dev.json
+    - name: 🔍 Debug: config/dev.json tartalma
+      run: |
+        echo "--- config/dev.json ---"
+        cat config/dev.json
+		echo "--- Mérete: ---"
+		stat -c%s config/dev.json || stat -f%z config/dev.json
+
 {
   "env": "dev",
   "api_mode": "sandbox",
