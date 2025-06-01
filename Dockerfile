@@ -32,9 +32,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN ls -lah . && echo "✅ Ellenőrzés: fájlok jelen vannak a build contextben"
 
+
 # ▶ Projektfájlok másolása
 # 📁 Teljes projekt másolása csak ezután (main.py, modulok, logo.txt stb.)
 COPY . .
+
+# Biztonság kedvéért külön a config is
+COPY config/ ./config/
+RUN echo "🗂️ Debug: config mappa tartalma:" && ls -l config/
+
 
 # ▶ Entrypoint script végrehajthatóvá tétele (Windows alatt ez kötelező itt)
 # 🛡️ Fájljog (csak ha van entrypoint.sh)
@@ -54,17 +60,4 @@ LABEL version="0.1"
 # ▶ Indítás bash wrapperen keresztül (érzékeli a környezetet)
 # 🔁 Wrapper script – ha van környezeti logika
 ENTRYPOINT ["./entrypoint.sh"]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
