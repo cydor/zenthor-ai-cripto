@@ -33,9 +33,7 @@ jobs:
         ls -l config/
         echo "🧪 JSON tartalom (dev):"
         cat config/dev.json
-        if [ ! -s config/dev.json ]; then
-          echo "❌ A config/dev.json üres!" && exit 1
-        fi
+        bash -c 'if [ ! -s config/dev.json ]; then echo "❌ A config/dev.json üres!" && exit 1; fi'
 
     - name: 🐳 Docker Build (dev környezet)
       run: |
