@@ -35,5 +35,10 @@ jobs:
       - name: Build Docker image
         run: docker build --build-arg ENV=dev -t zenthor-ai-cripto .
 
+      - name: 🔍 Debug: config/dev.json build után
+        run: |
+          echo "--- Elérhető fájlok a konténerben ---"
+          docker run --rm -e ENV=dev zenthor-ai-cripto sh -c "ls -l /app/config && cat /app/config/dev.json"
+
       - name: Konténer futtatás teszt célból
         run: docker run --rm -e ENV=dev -p 8080:8080 zenthor-ai-cripto
