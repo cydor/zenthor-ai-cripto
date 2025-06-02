@@ -77,6 +77,8 @@ EXPOSE 8080
 #CMD ["python", "main.py"]
 #CMD ["python", "ci_test_main.py"]
 CMD ["python", "ci_test_data_collector.py"]
+CMD ["sleep", "5"]
+
 
 LABEL maintainer="zenthor <zenthor@gmail.com>"
 LABEL version="0.1"
