@@ -1,3 +1,9 @@
+# ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗        
+# ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝        
+# ╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝╩╚═        
+# ╔═╗╦  ┌─┐┬─┐┬┌─┐┌┬┐┌─┐       
+# ╠═╣║  │  ├┬┘│├─┘ │ │ │       
+# ╩ ╩╩  └─┘┴└─┴┴   ┴ └─┘       
 # Zenthor AI-Crypto Dokumentáció
 
 ## 1. Bevezetés
@@ -5,6 +11,7 @@ Mi ez, kinek szól, mi a cél.
 
 ## 2. Telepítés és futtatás
 Hivatkozás: [build_run_notes.md](./build_run_notes.md)
+a tesztelés, fejleszés parancsai: developer-cheatsheet-(git-parancsok).md
 
 ## 3. Fejlesztési Roadmap
 Hivatkozás: [roadmap.md](./zenthor-ai-crypto_roadmap.md)
