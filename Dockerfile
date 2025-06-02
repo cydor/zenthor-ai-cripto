@@ -36,8 +36,19 @@ RUN ls -lah . && echo "✅ Ellenőrzés: fájlok jelen vannak a build contextben
 # ▶ Projektfájlok másolása
 # 📁 Teljes projekt másolása csak ezután (main.py, modulok, logo.txt stb.)
 # Biztonság kedvéért külön a config is
-COPY config/ ./config/
+#COPY config/ ./config/
+# ▶ Teljes projektfájlok bemásolása
 COPY . .
+
+# ▶ Diagnosztika: fontos fájlok léteznek-e
+RUN echo "🔍 Fájlok ellenőrzése..." \
+ && test -f config/dev.json && echo "✅ config/dev.json OK" || (echo "❌ config/dev.json HIÁNYZIK – újramásolás..." && cp config/dev.json.bak config/dev.json) \
+ && test -f config/dev.json && echo "📁 Újraellenőrzés OK" || (echo "🛑 config/dev.json még mindig hiányzik!" && exit 1) \
+ && test -f main.py && echo "✅ main.py OK" || (echo "❌ main.py HIÁNYZIK!" && exit 1)
+
+# ▶ Debug: mutasd meg a config tartalmát
+RUN echo "📂 config/dev.json tartalma:" && cat config/dev.json
+
 
 
 RUN echo "🗂️ Debug: config mappa tartalma:" && ls -l config/
