@@ -1,10 +1,13 @@
+---
 name: Docker CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   docker-build:
@@ -35,7 +38,7 @@ jobs:
       - name: Build Docker image
         run: docker build --build-arg ENV=dev -t zenthor-ai-cripto .
 
-      - name: 🔍 Debug: config/dev.json build után
+      - name: Debug config/dev.json build után
         run: |
           echo "--- Elérhető fájlok a konténerben ---"
           docker run --rm -e ENV=dev zenthor-ai-cripto sh -c "ls -l /app/config && cat /app/config/dev.json"
