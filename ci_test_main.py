@@ -17,6 +17,11 @@ import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from core.config_loader import load_config
 
+if __name__ == "__main__":
+    config = load_config()
+    print("✅ Config sikeresen betöltve:")
+    print(config)
+
 
 class HealthCheckHandler(BaseHTTPRequestHandler):
     def do_GET(self):

@@ -74,7 +74,8 @@ EXPOSE 8080
 
 # ▶ Alkalmazás futtatása
 # Ez a konténer indulásakor fut le. Feltételezi, hogy van egy main.py belépési pont.
-CMD ["python", "main.py"]
+#CMD ["python", "main.py"]
+CMD ["python", "ci_test_main.py"]
 LABEL maintainer="zenthor <zenthor@gmail.com>"
 LABEL version="0.1"
 
