@@ -1,0 +1,43 @@
+[33mcommit 4d4d412fb03c0eb5d1b38aaa69b034e0489558ab[m
+Author: Cydor <36950659+cydor@users.noreply.github.com>
+Date:   Mon Jun 2 01:30:47 2025 +0200
+
+    🧪 Konfig fájl újragenerálva BOM nélkül (UTF-8 clean)
+
+[1mdiff --git a/config/dev.json b/config/dev.json[m
+[1mindex ceeeeed..0655391 100644[m
+[1m--- a/config/dev.json[m
+[1m+++ b/config/dev.json[m
+[36m@@ -1,4 +1,11 @@[m
+ #config.dev.json[m
+[32m+[m[32m    - name: 🔍 Debug: config/dev.json tartalma[m
+[32m+[m[32m      run: |[m
+[32m+[m[32m        echo "--- config/dev.json ---"[m
+[32m+[m[32m        cat config/dev.json[m
+[32m+[m		[32mecho "--- Mérete: ---"[m
+[32m+[m		[32mstat -c%s config/dev.json || stat -f%z config/dev.json[m
+[32m+[m
+ {[m
+   "env": "dev",[m
+   "api_mode": "sandbox",[m
+
+[33mcommit 8f3823bdc488aeb048bf69506157c109ac9ee617[m
+Author: Cydor <36950659+cydor@users.noreply.github.com>
+Date:   Wed Apr 30 15:43:25 2025 +0200
+
+    🔧 Konfigrendszer centralizálva: config_loader + moduláris JSON betöltés
+
+[1mdiff --git a/config/dev.json b/config/dev.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ceeeeed[m
+[1m--- /dev/null[m
+[1m+++ b/config/dev.json[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m#config.dev.json[m
+[32m+[m[32m{[m
+[32m+[m[32m  "env": "dev",[m
+[32m+[m[32m  "api_mode": "sandbox",[m
+[32m+[m[32m  "log_level": "debug",[m
+[32m+[m[32m  "binance_api_key": "DEMO_KEY",[m
+[32m+[m[32m  "binance_api_secret": "DEMO_SECRET"[m
+[32m+[m[32m}[m

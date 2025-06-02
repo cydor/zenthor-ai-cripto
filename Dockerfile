@@ -35,11 +35,13 @@ RUN ls -lah . && echo "✅ Ellenőrzés: fájlok jelen vannak a build contextben
 
 # ▶ Projektfájlok másolása
 # 📁 Teljes projekt másolása csak ezután (main.py, modulok, logo.txt stb.)
-COPY . .
-
 # Biztonság kedvéért külön a config is
 COPY config/ ./config/
+COPY . .
+
+
 RUN echo "🗂️ Debug: config mappa tartalma:" && ls -l config/
+RUN echo "📁 config/dev.json tartalma:" && cat config/dev.json
 
 
 # ▶ Entrypoint script végrehajthatóvá tétele (Windows alatt ez kötelező itt)
