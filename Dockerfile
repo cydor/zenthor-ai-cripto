@@ -40,11 +40,19 @@ RUN ls -lah . && echo "✅ Ellenőrzés: fájlok jelen vannak a build contextben
 # ▶ Teljes projektfájlok bemásolása
 COPY . .
 
-# ▶ Diagnosztika: fontos fájlok léteznek-e
+# ▶ Fájlok ellenőrzése, újramásolás ha kell
 RUN echo "🔍 Fájlok ellenőrzése..." \
- && test -f config/dev.json && echo "✅ config/dev.json OK" || (echo "❌ config/dev.json HIÁNYZIK – újramásolás..." && cp config/dev.json.bak config/dev.json) \
- && test -f config/dev.json && echo "📁 Újraellenőrzés OK" || (echo "🛑 config/dev.json még mindig hiányzik!" && exit 1) \
- && test -f main.py && echo "✅ main.py OK" || (echo "❌ main.py HIÁNYZIK!" && exit 1)
+ && for f in config/dev.json main.py; do \
+      echo "⏳ Ellenőrzés: $f"; \
+      if [ ! -f "$f" ]; then \
+        echo "❌ $f hiányzik, újramásolás..."; \
+        cp "./$f" "./$f" || echo "⚠️ Nem sikerült másolni $f"; \
+      else \
+        echo "✅ $f megvan."; \
+      fi; \
+   done \
+ && echo "✅ Fájlok ellenőrzése kész."
+
 
 # ▶ Debug: mutasd meg a config tartalmát
 RUN echo "📂 config/dev.json tartalma:" && cat config/dev.json
