@@ -81,5 +81,5 @@ LABEL version="0.1"
 
 # ▶ Indítás bash wrapperen keresztül (érzékeli a környezetet)
 # 🔁 Wrapper script – ha van környezeti logika
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
 
