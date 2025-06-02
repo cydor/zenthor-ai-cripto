@@ -75,11 +75,13 @@ EXPOSE 8080
 # ▶ Alkalmazás futtatása
 # Ez a konténer indulásakor fut le. Feltételezi, hogy van egy main.py belépési pont.
 #CMD ["python", "main.py"]
-CMD ["python", "ci_test_main.py"]
+#CMD ["python", "ci_test_main.py"]
+CMD ["python", "ci_test_data_collector.py"]
+
 LABEL maintainer="zenthor <zenthor@gmail.com>"
 LABEL version="0.1"
 
 # ▶ Indítás bash wrapperen keresztül (érzékeli a környezetet)
 # 🔁 Wrapper script – ha van környezeti logika
-#ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
 

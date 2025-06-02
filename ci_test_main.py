@@ -9,7 +9,7 @@
 # ┴ ┴┴ ┴┴┘└┘o┴   ┴  
 
 # ci_test_main.py
-# A cél: ✅ Konfig betöltés → 📤 Kiírás → 🚪 Kilépés
+# CI validáció A cél: ✅ Konfig betöltés → 📤 Kiírás → 🚪 Kilépés
 
 import signal
 import time
