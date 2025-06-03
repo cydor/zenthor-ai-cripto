@@ -1,25 +1,23 @@
-# ci_test_data_collector.pyimport time
-
+# ci_test_data_collector.py
+import time
 import signal
 import sys
+from core.data_collector import fetch_price
 
 def shutdown_handler(signum, frame):
     print("🛑 Leállítási jel érkezett. Kilépés...")
     sys.exit(0)
 
 if __name__ == "__main__":
-    from core.exchange_connector import get_exchange
-    from core.config_loader import load_config
+    symbol = "BTC/USDT"
+    price = fetch_price(symbol)
+    print(f"✅ {symbol} aktuális ára: {price:.2f} USD")
 
-    config = load_config()
-    print("✅ Betöltött környezet:", config.get("env"))
-    
-    exchange = get_exchange("binance", config)
-    print("📈 Exchange betöltve:", exchange)
-
-    # CI futás limit – max 50 másodperc
+    # Leállítási jelek kezelése
     signal.signal(signal.SIGTERM, shutdown_handler)
     signal.signal(signal.SIGINT, shutdown_handler)
+
+    # CI-n 50 másodperc után kilép
     print("⏳ Várakozás 50 másodpercig...")
     time.sleep(50)
     print("✅ CI tesztidő lejárt. Kilépés.")
