@@ -1,4 +1,15 @@
 # ci_test_data_collector.py
+"""
+# ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗ 
+# ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝ 
+# ╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝╩╚═ 
+# ╔═╗╦  ┌─┐┬─┐┬┌─┐┌┬┐┌─┐
+# ╠═╣║  │  ├┬┘│├─┘ │ │ │
+# ╩ ╩╩  └─┘┴└─┴┴   ┴ └─┘
+#
+# Zenthor AI-Crypto 
+"""
+
 import time
 import signal
 import sys

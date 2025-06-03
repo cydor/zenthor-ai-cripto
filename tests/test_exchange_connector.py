@@ -1,4 +1,15 @@
 # test/test_exchange_connector.py
+"""
+# ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗ 
+# ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝ 
+# ╚═╝╚═╝╝╚╝ ╩ ╩ ╩╚═╝╩╚═ 
+# ╔═╗╦  ┌─┐┬─┐┬┌─┐┌┬┐┌─┐
+# ╠═╣║  │  ├┬┘│├─┘ │ │ │
+# ╩ ╩╩  └─┘┴└─┴┴   ┴ └─┘
+#
+# Zenthor AI-Crypto Dockerfile
+"""
+
 
 from core.exchange_connector import ExchangeConnector
 
