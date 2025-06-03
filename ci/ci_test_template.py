@@ -1,4 +1,4 @@
-#ci\ci_test_template.py
+#ci/ci_test_template.py
 """
 # ╔═╗╔═╗╔╗╔╔╦╗╦ ╦╔═╗╦═╗ 
 # ╔═╝║╣ ║║║ ║ ╠═╣║ ║╠╦╝ 
