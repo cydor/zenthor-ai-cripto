@@ -43,9 +43,6 @@ jobs:
           echo "--- Elérhető fájlok a konténerben ---"
           docker run --rm -e ENV=dev zenthor-ai-cripto sh -c "ls -l /app/config && cat /app/config/dev.json"
 
-
       - name: ✅ Run exchange connector test
         run: |
           pytest tests/test_exchange_connector.py
-
-
